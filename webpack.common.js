@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
 	// entry: {main: "./src/index.js",
-	// 		   vendor: "./src/vendor.js"},
+	//            vendor: "./src/vendor.js"},
 
 	entry: ['babel-polyfill', './src/js/index.js'],
 
@@ -15,15 +15,16 @@ module.exports = {
 			},
 
 			{
-				test: /\.(svg|png|jpg|gif)$/,
-				use: {
-					loader: "file-loader",
-					options: {
-						name: "[name].[hash].[ext]",
-						outputPath: "img"
-					}
-
-				}
+				test: /\.(svg|png|jpe?g|gif)$/,
+				use: [{
+						loader: "file-loader",
+						
+						options: {
+							name: "[name].[hash].[ext]",
+							outputPath: "./img"
+						},
+					},
+				]
 			}
 		]
 	},
@@ -56,7 +57,6 @@ module.exports = {
 		}),
 	]
 };
-
 // package.json
 // "scripts": {
 //     "dev": "webpack --mode development",
