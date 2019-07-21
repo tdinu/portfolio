@@ -1,19 +1,4 @@
-// import img from '../img/'
 import "../scss/main.scss";
-console.log("Hello world, from index.js");
-console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
-
-import x from './tests/test';
-// imports 1234 from test.js
-
-const num = 33;
-console.log(`Index.js here, with const ${num}; and I imported ${x} from test`);
-
-// alert("hello from webpack");
-import afile from './modals/file';
-
-// all js
-// navigation menu
 
 // select DOM items
 
@@ -56,3 +41,52 @@ function toggleMenu1(){
     }
 }
 
+// container of grid images projects
+const projectsContainer = document.querySelector('.projects');
+
+projectsContainer.addEventListener('click', e => {
+
+    // e.preventDefault();
+
+    // closest btn light to the click event
+    const modalToggle = e.target.closest('.btn-light');
+ 
+    if (!modalToggle) return
+
+    // select the appropriate modal 
+    const selectedModal = modalToggle.parentNode.nextElementSibling;
+   // and its close btn
+    const closeButton = selectedModal.querySelector('.modal-close');
+
+    selectedModal.classList.add('is-open');
+
+    closeButton.addEventListener('click', _ => {
+        selectedModal.classList.remove('is-open');
+    })
+
+    window.addEventListener('click', clickOutside);
+    function clickOutside(e) {
+         
+        if (e.target == selectedModal) {
+            //modals.style.display = 'none';
+            selectedModal.classList.remove('is-open');
+        }
+    }
+})
+
+// console.log("Hello world, from index.js");
+// console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
+
+// import x from './tests/test';
+// imports 1234 from test.js
+
+// const num = 33;
+// console.log(`Index.js here, with const ${num}; and I imported ${x} from test`);
+
+// alert("hello from webpack");
+// import afile from './modals/file';
+//import modal from './modals/modals';
+//import clock from './modals/modal-clock';
+
+// all js
+// navigation menu

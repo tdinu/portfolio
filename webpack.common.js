@@ -3,29 +3,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-	// entry: {main: "./src/index.js",
+	// entry: {main: "./src/index.js",   // main = [name]
 	//            vendor: "./src/vendor.js"},
-
-	entry: ['babel-polyfill', './src/js/index.js'],
+	// 'babel-polyfill'
+	entry: ['@babel/polyfill', './src/js/index.js'],
 
 	module: {
 		rules: [{
-				test: /\.html$/,
-				use: ["html-loader"]
-			},
+			test: /\.html$/,
+			use: ["html-loader"]
+		},
 
-			{
-				test: /\.(svg|png|jpe?g|gif)$/,
-				use: [{
-						loader: "file-loader",
-						
-						options: {
-							name: "[name].[hash].[ext]",
-							outputPath: "./img"
-						},
-					},
-				]
-			}
+		{
+			test: /\.(svg|png|jpe?g|gif)$/,
+			use: [{
+				loader: "file-loader",
+
+				options: {
+					name: "img/[name].[ext]"  // [name].[hash].
+					// outputPath: "imgs"  //./
+				},
+			},
+			]
+		}
 		]
 	},
 

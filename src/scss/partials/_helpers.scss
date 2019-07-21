@@ -1,3 +1,8 @@
+// functions, mixins
+
+$primary-color: #444;
+$secondary-color: #eece1a;
+
 // transition ease-out
 @mixin easeOut {
     transition: all .7s ease-out;
@@ -12,15 +17,33 @@
     }
 }
 
-// background
+// background overlay with opacity
 @mixin background ($img) {
 
     &#bg-img {
         background: $img;
         background-attachment: fixed;
         background-size: cover;
+
+        // &::after {
+        //     // .overlay {
+        //     content: '';
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background: rgba($primary-color, $background-opacity);
+        //     z-index: -1;
+        // }
     }
+
+    // background: linear-gradient( rgba($primary-color, $background-opacity), rgba($primary-color, $background-opacity) ), $img;
+    // background-size: cover;
+    //} 
 }
+
+
 
 // media queries
 // mobile first
@@ -73,4 +96,121 @@
         @return #fff;
     }
 }
+
+// @function set-color($color) {
+//     @if (lightness($color) > 40) {
+//         @return #000;
+//     } @else {
+//         @return #fff;
+//     }
+// }
+
+//========================
+
+@mixin mQuery($size) {
+    $desktop: "(min-width: 1024px)";
+    $tablet: "(min-width: 768px) and (max-width: 1023px)";
+    $mobile: "(max-width: 767px)";
+
+    @if $size==desktop {
+        @media only screen and (#{$desktop}) {
+            @content;
+        }
+    }
+
+    @else if $size==tablet {
+        @media only screen and (#{$tablet}) {
+            @content;
+        }
+    }
+
+    @else if $size==mobile {
+        @media only screen and (#{$mobile}) {
+            @content;
+        }
+    }
+
+    @else {
+        @media only screen and (#{$size}) {
+            @content;
+        }
+    }
+}
+
+
+// // // transition ease-out
+// @mixin easeOut {
+//     transition: all .7s ease-out;
+// }
+
+// // clearfix
+// @mixin clearfix {
+//     &::after {
+//         content: "";
+//         display: table;
+//         clear: both;
+//     }
+// }
+
+// // background
+// @mixin background ($img) {
+
+//     // &#bg-img {  // &
+//         background: $img;
+//         background-attachment: fixed;
+//         background-size: cover;
+//     // }
+// }
+
+// // media queries
+// // mobile first
+
+// @mixin mediaQ($size) {
+//     @if $size=='wide' {
+//         @media only screen and (min-width: 1366px) {
+//             @content;
+//         }
+//     }
+
+//     @else if $size=='desktop' {
+//         @media only screen and (min-width: 960px) {
+//             //1024
+//             @content;
+//         }
+//     }
+
+//     @else if $size=='tablet' {
+//         @media only screen and (min-width: 600px) and // 768
+
+//         (max-width: 959px) {
+//             //1023
+//             @content;
+//         }
+//     }
+
+//     @else if $size=='sm2' {
+//         @media only screen and (min-width: 501px) and (max-width: 599px) {
+//             // 767
+//             @content;
+//         }
+//     }
+
+//     @else if $size=='sm' {
+//         @media only screen and (max-width: 500px) {
+//             @content;
+//         }
+//     }
+// }
+
+// //function to set text-color
+
+// @function set-color($color) {
+//     @if (lightness($color) < 40) {
+//         @return #000;
+//     }
+
+//     @else {
+//         @return #fff;
+//     }
+// }
 

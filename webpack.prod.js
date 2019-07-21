@@ -15,12 +15,12 @@ module.exports = merge(common, {
 		// filename: 'js/bundle.js'
 		//filename: 'main.[contentHash].js'
 		// for multiple entries, [name] takes the name from entry common (main or vendor)
-		filename: 'js/[name].[contentHash].js'
+		filename: 'js/main.js'
 	},
 
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "css/[name].[contentHash].css"
+			filename: "main.css"   // css/
 		}),
 		new CleanWebpackPlugin()
 	],
