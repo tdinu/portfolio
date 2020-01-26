@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js --open"
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "T Dinu",
@@ -19,10 +20,11 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^2.1.1",
     "file-loader": "^4.0.0",
+    "gh-pages": "^2.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.0",

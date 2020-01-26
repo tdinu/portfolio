@@ -15,6 +15,7 @@ module.exports = merge(common, {
 		// filename: 'js/bundle.js'
 		//filename: 'main.[contentHash].js'
 		// for multiple entries, [name] takes the name from entry common (main or vendor)
+		publicPath: "/webpack-demo/",
 		filename: 'js/main.js'
 	},
 
