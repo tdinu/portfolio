@@ -8,32 +8,35 @@ const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
-	mode: "production",
-	// we don't want contentHash in development, only production
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		// filename: 'js/bundle.js'
-		//filename: 'main.[contentHash].js'
-		// for multiple entries, [name] takes the name from entry common (main or vendor)
-		publicPath: "/webpack-demo/",
-		filename: 'js/main.js'
-	},
+  mode: 'production',
+  // we don't want contentHash in development, only production
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    // filename: 'js/bundle.js'
+    //filename: 'main.[contentHash].js'
+    // for multiple entries, [name] takes the name from entry common (main or vendor)
+    // Tweak this to match the GitHub project name
+    // publicPath: '/webpack-demo/',
+    filename: 'js/main.js',
+  },
 
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: "main.css"   // css/
-		}),
-		new CleanWebpackPlugin()
-	],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'main.css', // css/
+    }),
+    new CleanWebpackPlugin(),
+  ],
 
-	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: [
-				MiniCssExtractPlugin.loader, //3. Extract css into files
-				"css-loader", //2. Turns css into commonjs
-				"sass-loader" //1. Turns sass into css
-			]
-		}]
-	}
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader, //3. Extract css into files
+          'css-loader', //2. Turns css into commonjs
+          'sass-loader', //1. Turns sass into css
+        ],
+      },
+    ],
+  },
 });
