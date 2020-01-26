@@ -1,8 +1,8 @@
-// functions, mixins
+
 
 $primary-color: #444;
 $secondary-color: #eece1a;
-
+// functions, mixins
 // transition ease-out
 @mixin easeOut {
     transition: all .7s ease-out;

@@ -7,7 +7,8 @@ const menu = document.querySelector('.menu');
 const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
-
+// container of grid images projects
+const projectsContainer = document.querySelector('.projects');
 
 
 // set initial state of menu
@@ -17,6 +18,7 @@ let showMenu = false;
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu(){ 
+    console.log('click')
     menuBtn.classList.toggle('close'); 
     menu.classList.toggle('show'); menuBranding.classList.toggle('show'); menuNav.classList.toggle('show'); 
     navItems.forEach(item => item.classList.toggle('show')); 
@@ -41,11 +43,8 @@ function toggleMenu1(){
     }
 }
 
-// container of grid images projects
-const projectsContainer = document.querySelector('.projects');
-
 projectsContainer.addEventListener('click', e => {
-
+    // to check
     // e.preventDefault();
 
     // closest btn light to the click event
