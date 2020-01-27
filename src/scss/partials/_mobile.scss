@@ -1,250 +1,252 @@
-
 @include mediaQ('tablet') {
-	main {
-		align-items: center;
 
-		&#about {
-			text-align: center;
-		}
+  main {
+    &#home .lg-heading,
+    &#about .lg-heading,
+    &#work .lg-heading,
+    &#contact .lg-heading {
+      // margin-top: 10vh;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-size: 3rem;
+    }
+    align-items: center;
 
-		&#about .about-info {
-			grid-template-areas:
-				'bioimage'
-				'bio'
-				'job1'
-				'job2'
-				'job3';
-			grid-template-columns: 1fr;
-		}
+    &#about {
+      text-align: center;
+    }
 
-		&#work {
-			// color: red;
+    &#about .about-info {
+      grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+      grid-template-columns: 1fr;
+    }
 
-			.projects {
+    &#work {
 
-				// grid-template-columns: repeat(2, 1fr);
-				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-				grid-gap: 1.5em;
-				padding: 0 5%;
-				.item {
-					min-height: 320px;
-				}
+      .projects {
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 1.5em;
+        padding: 0 5%;
+        .item {
+          min-height: 320px;
+        }
+      }
+    }
 
-				.modal-1 {
-					.modal-content {
-						width: 60%;
-						top: 27%;
+    &#contact {
+      .boxes {
+        .contact-form {
+          margin: 0 6rem;
+          text-align: left;
+        }
+      }
 
-						//bottom: 0;
-						.modal-body {
-							.clock {
-								border: 7px solid white;
-								padding: 0;
+      .boxes form div.input {
+        div {
+          width: 100% !important;
+        }
 
-								.hand {
-									width: 50%;
-									height: 3px;
-								}
-							}
-						}
-					}
+        div:nth-child(2) {
+          //display: none;
+          float: none !important;
+        }
+      }
+    }
+  }
 
-				}
+  .modals {
 
-			}
-		}
+    .modal-content {
+      line-height: 1.1;
+      padding: 1rem;
+      .modal-body {
+        // grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        .modal-image {
+          grid-column: 1/ -1;
 
-		&#contact {
+          img {
+              width: 100%;
+              height: 100%;
+          }
+      }
 
-			.boxes {
-				.contact-form {
-					margin: 0 6rem;
-					text-align: left;
-				}
-			}
-
-			.boxes form div.input {
-
-				div {
-					width: 100% !important;
-				}
-
-				div:nth-child(2) {
-					//display: none;
-					float: none !important;
-				}
-			}
-		}
-	}
-
-
+      .modal-text {
+          grid-column: 1/ -1;
+      }
+      }
+      
+    }
+  }
 }
 
-// 501 767
-// 501 599
+// max-width: 530px
+@include mediaQ('mobile') {
+  
+  main {
+    &#work {
+      .projects {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .item {
+          min-height: 250px;
+        }
+      }
+    }
+  }
+  
+  main {
+    align-items: center;
+    //text-align: center;
+    padding: 3rem;
 
-@include mediaQ('sm2') {
-	main {
-		&#work {
+    &#home .lg-heading,
+    &#about .lg-heading,
+    &#work .lg-heading,
+    &#contact .lg-heading {
+      font-size: 2.6rem;
+    }
+    &#home .sm-heading,
+    &#about .sm-heading,
+    &#work .sm-heading,
+    &#contact .sm-heading {
+      font-size: 1.6rem;
+    }
+    
+    &#about .about-info {
+      grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+      grid-template-columns: 1fr;
+    }
 
-			.projects {
-				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-				.item {
-					min-height: 250px;
-				}
-			}
-			.modal-1 {
-				.modal-content {
-					max-width: 80%;
+    &#work {
+      .projects {
+        // grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 
-					//top: 25%;
-					//bottom: 0;
-					.modal-body {
-						.clock {
-							border: 7px solid white;
-							padding: 0;
+        .item {
+          // place-self: center;
+          height: 250px;
+        }
 
-							.hand {
-								width: 50%;
-								height: 3px;
-							}
-						}
-					}
-				}
+        .btn {
+          padding: 0.1rem;
+        }
+      }
+    }
 
-			}
-		}
-	}
+    &#contact {
+      .boxes {
+        .contact-form {
+          margin: 0 1.7rem;
+          text-align: left;
+
+          .btn-xl {
+            font-size: 0.8rem;
+            padding: 0.8rem 1.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    //min-height: 0;
+    height: 50vh;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    //height: 60vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    //height: 40vh;
+    transform: translate3d(100%, 0, 0);
+
+    .portrait {
+      //transform: scale(.8);
+      width: 12rem;
+      height: 12rem;
+      margin-top: 2vh;
+    }
+  }
+
+  .modals {
+
+    .modal-content {
+
+      .modal-body {
+        // grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        .modal-image {
+          grid-column: 1/ -1;
+          // align-self: center;
+
+          img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+
+          }
+      }
+
+      .modal-text {
+          grid-column: 1/ -1;
+          align-self: center;
+      }
+      }
+      
+    }
+  }
 }
 
-// max-width: 500px
-@include mediaQ('sm') {
+@include mediaQ('mobile-landscape') {
+  .modals {
 
-	main {
-		align-items: center;
-		//text-align: center;
-		padding: 3rem;
+    .modal-content {
 
-		&#home .lg-heading,
-		&#about .lg-heading,
-		&#work .lg-heading,
-		&#contact .lg-heading {
-			margin-top: 10vh;
-			line-height: 1.2;
-			margin-bottom: 1rem;
-			font-size: 3rem;
-		}
+      .modal-body {
+        // grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, minmax(50px, 1fr));
+        .modal-image {
+          grid-column: 1/ 2;
+          // align-self: center;
 
-		&#about .about-info {
-			grid-template-areas:
-				'bioimage'
-				'bio'
-				'job1'
-				'job2'
-				'job3';
-			grid-template-columns: 1fr;
-		}
+          img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
 
-		&#work {
+          }
+      }
 
-			.projects {
-				// grid-template-columns: repeat(1, 1fr);
-				grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-
-				.item {
-
-					// place-self: center;
-					height: 250px;
-				}
-
-				.btn {
-					padding: .1rem;
-				}
-
-				.modal-1 {
-					.modal-content {
-						width: 80%;
-						top: 25%;
-
-						//bottom: 0;
-						.modal-body {
-							.clock {
-								border: 7px solid white;
-								padding: 0;
-
-								.hand {
-									width: 50%;
-									height: 3px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		&#contact {
-
-			.boxes {
-				.contact-form {
-					margin: 0 1.7rem;
-					text-align: left;
-
-					.btn-xl {
-						font-size: .8rem;
-						padding: .8rem 1.4rem;
-					}
-				}
-
-			}
-
-		}
-	}
-
-	ul.menu-nav,
-	div.menu-branding {
-		float: none;
-		width: 100%;
-		//min-height: 0;
-		height: 50vh;
-
-		&.show {
-			transform: translate3d(0, 0, 0);
-		}
-	}
-
-	.menu-nav {
-		//height: 60vh;
-		transform: translate3d(-100%, 0, 0);
-		font-size: 24px;
-	}
-
-	.menu-branding {
-		//height: 40vh;
-		transform: translate3d(100%, 0, 0);
-
-		.portrait {
-			//transform: scale(.8);
-			width: 12rem;
-			height: 12rem;
-			margin-top: 2vh;
-		}
-	}
+      .modal-text {
+          grid-column: 2/ -1;
+          align-self: center;
+          color: green;
+      }
+      }
+      
+    }
+  }
 }
-// desktop
-
-// min-width: 1366px
-// @include mediaQ('wide') {
-// 	.projects {
-// 		// grid-template-columns: repeat(4, 1fr);
-// 	}
-// }
-
-// // min-width: 1024px
-// @include mediaQ('desktop') {
-// 	.projects {
-// 		// grid-template-columns: repeat(3, 1fr);
-// 	}
-// }
-
-// min-width: 768px) and (max-width: 1023px

@@ -1,4 +1,4 @@
-import "../scss/main.scss";
+import '../scss/main.scss';
 
 // select DOM items
 
@@ -10,82 +10,71 @@ const navItems = document.querySelectorAll('.nav-item');
 // container of grid images projects
 const projectsContainer = document.querySelector('.projects');
 
-
 // set initial state of menu
-
 let showMenu = false;
 
 menuBtn.addEventListener('click', toggleMenu);
 
-function toggleMenu(){ 
-    console.log('click')
-    menuBtn.classList.toggle('close'); 
-    menu.classList.toggle('show'); menuBranding.classList.toggle('show'); menuNav.classList.toggle('show'); 
-    navItems.forEach(item => item.classList.toggle('show')); 
+function toggleMenu() {
+  menuBtn.classList.toggle('close');
+  menu.classList.toggle('show');
+  menuBranding.classList.toggle('show');
+  menuNav.classList.toggle('show');
+  navItems.forEach(item => item.classList.toggle('show'));
 }
 
-// long version
-
-function toggleMenu1(){ 
-    if (!showMenu) {
-        menuBtn.classList.add('close'); 
-        menu.classList.add('show'); menuBranding.classList.add('show'); menuNav.classList.add('show'); 
-        navItems.forEach(item => { item.classList.add('show'); }) 
-
-        // set menu state
-        showMenu = true;
-    } else {
-        menuBtn.classList.remove('close'); menu.classList.remove('show'); menuBranding.classList.remove('show'); menuNav.classList.remove('show'); 
-        navItems.forEach(item => { item.classList.remove('show'); }) 
-
-        // set menu state
-        showMenu = false;
-    }
-}
-
-projectsContainer.addEventListener('click', e => {
-    // to check
-    // e.preventDefault();
-
+if (projectsContainer) {
+  projectsContainer.addEventListener('click', e => {
     // closest btn light to the click event
     const modalToggle = e.target.closest('.btn-light');
- 
-    if (!modalToggle) return
 
-    // select the appropriate modal 
+    if (!modalToggle) return;
+
+    // select the appropriate modal
     const selectedModal = modalToggle.parentNode.nextElementSibling;
-   // and its close btn
+    // and its close btn
     const closeButton = selectedModal.querySelector('.modal-close');
 
     selectedModal.classList.add('is-open');
 
     closeButton.addEventListener('click', _ => {
-        selectedModal.classList.remove('is-open');
-    })
+      selectedModal.classList.remove('is-open');
+    });
 
     window.addEventListener('click', clickOutside);
     function clickOutside(e) {
-         
-        if (e.target == selectedModal) {
-            //modals.style.display = 'none';
-            selectedModal.classList.remove('is-open');
-        }
+      if (e.target == selectedModal) {
+        //modals.style.display = 'none';
+        selectedModal.classList.remove('is-open');
+      }
     }
-})
+  });
+}
 
-// console.log("Hello world, from index.js");
-// console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
+// long version
 
-// import x from './tests/test';
-// imports 1234 from test.js
+// function toggleMenu1() {
+//   if (!showMenu) {
+//     menuBtn.classList.add('close');
+//     menu.classList.add('show');
+//     menuBranding.classList.add('show');
+//     menuNav.classList.add('show');
+//     navItems.forEach(item => {
+//       item.classList.add('show');
+//     });
 
-// const num = 33;
-// console.log(`Index.js here, with const ${num}; and I imported ${x} from test`);
+//     // set menu state
+//     showMenu = true;
+//   } else {
+//     menuBtn.classList.remove('close');
+//     menu.classList.remove('show');
+//     menuBranding.classList.remove('show');
+//     menuNav.classList.remove('show');
+//     navItems.forEach(item => {
+//       item.classList.remove('show');
+//     });
 
-// alert("hello from webpack");
-// import afile from './modals/file';
-//import modal from './modals/modals';
-//import clock from './modals/modal-clock';
-
-// all js
-// navigation menu
+//     // set menu state
+//     showMenu = false;
+//   }
+// }

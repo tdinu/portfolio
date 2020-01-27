@@ -56,6 +56,7 @@ h1, h2, h3 {
     }
 
     &.sm-heading {
+        font-size: 2rem;
         margin-bottom: 2rem;
         padding: .2rem 1rem;
         background: rgba(lighten($primary-color, 5), .5);

@@ -2,7 +2,7 @@
 
 $primary-color: #444;
 $secondary-color: #eece1a;
-// functions, mixins
+
 // transition ease-out
 @mixin easeOut {
     transition: all .7s ease-out;
@@ -43,11 +43,7 @@ $secondary-color: #eece1a;
     //} 
 }
 
-
-
 // media queries
-// mobile first
-
 @mixin mediaQ($size) {
     @if $size=='wide' {
         @media only screen and (min-width: 1366px) {
@@ -55,31 +51,21 @@ $secondary-color: #eece1a;
         }
     }
 
-    @else if $size=='desktop' {
-        @media only screen and (min-width: 960px) {
-            //1024
-            @content;
-        }
-    }
-
     @else if $size=='tablet' {
-        @media only screen and (min-width: 600px) and // 768
-
-        (max-width: 959px) {
+        @media only screen and (max-width: 960px) {
             //1023
             @content;
         }
     }
 
-    @else if $size=='sm2' {
-        @media only screen and (min-width: 501px) and (max-width: 599px) {
-            // 767
+    @else if $size=='mobile' {
+        @media only screen and (max-width: 530px) {
             @content;
         }
     }
 
-    @else if $size=='sm' {
-        @media only screen and (max-width: 500px) {
+    @else if $size=='mobile-landscape' {
+        @media only screen and (max-width: 960px)  and (orientation: landscape) {
             @content;
         }
     }
@@ -96,121 +82,4 @@ $secondary-color: #eece1a;
         @return #fff;
     }
 }
-
-// @function set-color($color) {
-//     @if (lightness($color) > 40) {
-//         @return #000;
-//     } @else {
-//         @return #fff;
-//     }
-// }
-
-//========================
-
-@mixin mQuery($size) {
-    $desktop: "(min-width: 1024px)";
-    $tablet: "(min-width: 768px) and (max-width: 1023px)";
-    $mobile: "(max-width: 767px)";
-
-    @if $size==desktop {
-        @media only screen and (#{$desktop}) {
-            @content;
-        }
-    }
-
-    @else if $size==tablet {
-        @media only screen and (#{$tablet}) {
-            @content;
-        }
-    }
-
-    @else if $size==mobile {
-        @media only screen and (#{$mobile}) {
-            @content;
-        }
-    }
-
-    @else {
-        @media only screen and (#{$size}) {
-            @content;
-        }
-    }
-}
-
-
-// // // transition ease-out
-// @mixin easeOut {
-//     transition: all .7s ease-out;
-// }
-
-// // clearfix
-// @mixin clearfix {
-//     &::after {
-//         content: "";
-//         display: table;
-//         clear: both;
-//     }
-// }
-
-// // background
-// @mixin background ($img) {
-
-//     // &#bg-img {  // &
-//         background: $img;
-//         background-attachment: fixed;
-//         background-size: cover;
-//     // }
-// }
-
-// // media queries
-// // mobile first
-
-// @mixin mediaQ($size) {
-//     @if $size=='wide' {
-//         @media only screen and (min-width: 1366px) {
-//             @content;
-//         }
-//     }
-
-//     @else if $size=='desktop' {
-//         @media only screen and (min-width: 960px) {
-//             //1024
-//             @content;
-//         }
-//     }
-
-//     @else if $size=='tablet' {
-//         @media only screen and (min-width: 600px) and // 768
-
-//         (max-width: 959px) {
-//             //1023
-//             @content;
-//         }
-//     }
-
-//     @else if $size=='sm2' {
-//         @media only screen and (min-width: 501px) and (max-width: 599px) {
-//             // 767
-//             @content;
-//         }
-//     }
-
-//     @else if $size=='sm' {
-//         @media only screen and (max-width: 500px) {
-//             @content;
-//         }
-//     }
-// }
-
-// //function to set text-color
-
-// @function set-color($color) {
-//     @if (lightness($color) < 40) {
-//         @return #000;
-//     }
-
-//     @else {
-//         @return #fff;
-//     }
-// }
 
