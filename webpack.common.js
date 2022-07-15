@@ -26,17 +26,27 @@ module.exports = {
       },
 
       {
-        test: /\.(svg|png|jpe?g|gif)$/,
-        use: [
+        // test: /\.(svg|png|jpe?g|gif)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        // type: 'asset/resource',
+        // type: 'asset/inline',
+        type: 'asset',
+        /* use: [
           {
             loader: 'file-loader',
 
             options: {
-              name: 'img/[name].[ext]', // [name].[hash].
+              name: 'img/[name].[ext]',
+
+              // outputPath: 'img',
+              // esModule: false,
+              // publicPath: '/img/',
+              // outputPath: '/img/',
+              // name: 'img/[name].[ext]', // [name].[hash].
               // outputPath: "imgs"  //./
             },
           },
-        ],
+        ], */
       },
     ],
   },

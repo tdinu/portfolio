@@ -13,6 +13,10 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
     // filename: 'js/bundle.js'
     filename: 'js/bundle.js',
+    // publicPath: '/',
+    // assetModuleFilename: 'img/[name][ext]',
+    assetModuleFilename: 'img/[name][ext]',
+    clean: true,
   },
 
   module: {

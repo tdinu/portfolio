@@ -17,7 +17,10 @@ module.exports = merge(common, {
     // for multiple entries, [name] takes the name from entry common (main or vendor)
     // Tweak this to match the GitHub project name
     // publicPath: '/webpack-demo/',
+    // assetModuleFilename: 'img/[name][ext]',
     filename: 'js/main.js',
+    assetModuleFilename: 'img/[name][ext]',
+    clean: true,
   },
 
   plugins: [
