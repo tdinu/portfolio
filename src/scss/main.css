@@ -29,7 +29,7 @@ body::after {
 }
 
 body#bg-img {
-  background: url(../img/apple-artwork-color.jpg);
+  background: url(../imgages/apple-artwork-color.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -192,7 +192,7 @@ a {
 }
 
 .modals .modal-content .modal-body .modal-image img:hover {
-  opacity: .7;
+  opacity: 0.7;
   border: 3px solid #eece1a;
   -webkit-transition: all .7s ease-out;
   transition: all .7s ease-out;
@@ -367,7 +367,7 @@ header {
 .menu-branding .portrait {
   width: 250px;
   height: 250px;
-  background: url(../img/lap-cat-profile.jpg);
+  background: url(../imgages/lap-cat-profile.jpg);
   background-size: cover;
   border-radius: 50%;
   border: 3px solid #eece1a;
