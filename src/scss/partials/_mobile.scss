@@ -1,5 +1,4 @@
 @include mediaQ('tablet') {
-
   main {
     &#home .lg-heading,
     &#about .lg-heading,
@@ -27,7 +26,6 @@
     }
 
     &#work {
-
       .projects {
         // grid-template-columns: repeat(2, 1fr);
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -45,6 +43,11 @@
           margin: 0 6rem;
           text-align: left;
         }
+        .optionalParent > div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
       }
 
       .boxes form div.input {
@@ -61,7 +64,6 @@
   }
 
   .modals {
-
     .modal-content {
       line-height: 1.1;
       padding: 1rem;
@@ -72,23 +74,21 @@
           grid-column: 1/ -1;
 
           img {
-              width: 100%;
-              height: 100%;
+            width: 100%;
+            height: 100%;
           }
-      }
+        }
 
-      .modal-text {
+        .modal-text {
           grid-column: 1/ -1;
+        }
       }
-      }
-      
     }
   }
 }
 
 // max-width: 530px
 @include mediaQ('mobile') {
-  
   main {
     &#work {
       .projects {
@@ -99,7 +99,7 @@
       }
     }
   }
-  
+
   main {
     align-items: center;
     //text-align: center;
@@ -117,7 +117,7 @@
     &#contact .sm-heading {
       font-size: 1.6rem;
     }
-    
+
     &#about .about-info {
       grid-template-areas:
         'bioimage'
@@ -155,6 +155,11 @@
             padding: 0.8rem 1.4rem;
           }
         }
+        .optionalParent > div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
       }
     }
   }
@@ -190,9 +195,7 @@
   }
 
   .modals {
-
     .modal-content {
-
       .modal-body {
         // grid-template-columns: repeat(1, 1fr);
         grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
@@ -201,29 +204,25 @@
           // align-self: center;
 
           img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
-      }
+        }
 
-      .modal-text {
+        .modal-text {
           grid-column: 1/ -1;
           align-self: center;
+        }
       }
-      }
-      
     }
   }
 }
 
 @include mediaQ('mobile-landscape') {
   .modals {
-
     .modal-content {
-
       .modal-body {
         // grid-template-columns: repeat(1, 1fr);
         grid-template-columns: repeat(2, minmax(50px, 1fr));
@@ -232,21 +231,19 @@
           // align-self: center;
 
           img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
-      }
+        }
 
-      .modal-text {
+        .modal-text {
           grid-column: 2/ -1;
           align-self: center;
           color: green;
+        }
       }
-      }
-      
     }
   }
 }
