@@ -7,7 +7,8 @@
   list-style-type: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -29,23 +30,29 @@ body::after {
 }
 
 body#bg-img {
-  background: url(../imgages/apple-artwork-color.jpg);
+  background: url(../img/apple-artwork-color.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 400;
 }
 
-h1.lg-heading, h2.lg-heading, h3.lg-heading {
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
   font-size: 4rem;
 }
 
-h1.sm-heading, h2.sm-heading, h3.sm-heading {
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
   font-size: 2rem;
   margin-bottom: 2rem;
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
   background: rgba(81, 81, 81, 0.5);
 }
 
@@ -166,7 +173,7 @@ a {
 .modals .modal-content .modal-body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: repeat(3, 1fr);  /* (1fr)[3]; */
+  -ms-grid-columns: repeat(3, 1fr);
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   -webkit-box-align: center;
@@ -307,7 +314,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: .9;
+  opacity: 0.9;
   visibility: hidden;
 }
 
@@ -367,7 +374,7 @@ header {
 .menu-branding .portrait {
   width: 250px;
   height: 250px;
-  background: url(../imgages/lap-cat-profile.jpg);
+  background: url(../img/lap-cat-profile.jpg);
   background-size: cover;
   border-radius: 50%;
   border: 3px solid #eece1a;
@@ -435,7 +442,7 @@ main .icons {
 }
 
 main .icons a {
-  padding: .4rem;
+  padding: 0.4rem;
 }
 
 main .icons a:hover {
@@ -462,7 +469,7 @@ main#about .about-info {
   display: grid;
   grid-gap: 30px;
       grid-template-areas: 'bioimage  bio  bio' 'job1   job2   job3';
-  -ms-grid-columns: repeat(3, 1fr); /* (1fr)[3]; */
+  -ms-grid-columns: repeat(3, 1fr);
       grid-template-columns: repeat(3, 1fr);
 }
 
@@ -503,7 +510,7 @@ main#about .about-info .job-1 {
 
 main#about .about-info .job {
   background: #515151;
-  padding: .5rem;
+  padding: 0.5rem;
   border-bottom: 5px solid #eece1a;
 }
 
@@ -541,7 +548,7 @@ main#work .projects .item > img {
 }
 
 main#work .projects .item > img:hover {
-  opacity: .7;
+  opacity: 0.7;
   border: 3px solid #eece1a;
   -webkit-transition: all .7s ease-out;
   transition: all .7s ease-out;
@@ -614,8 +621,8 @@ main#contact .boxes .contact-form .btn-xl {
 }
 
 main#contact .boxes .contact-form .btn-primary {
-  background-color: #F05F44;
-  border-color: #F05F44;
+  background-color: #f05f44;
+  border-color: #f05f44;
 }
 
 main#contact .boxes .contact-form .btn-primary:hover {
@@ -825,7 +832,7 @@ main#contact .boxes .contact-form .btn-primary:hover {
 
 @media only screen and (max-width: 960px) and (orientation: landscape) {
   .modals .modal-content .modal-body {
-    -ms-grid-columns: repeat(2, minmax(50px, 1fr)); /* (minmax(50px, 1fr))[2]; */
+    -ms-grid-columns: repeat(2, minmax(50px, 1fr));
         grid-template-columns: repeat(2, minmax(50px, 1fr));
   }
   .modals .modal-content .modal-body .modal-image {
