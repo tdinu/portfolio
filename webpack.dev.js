@@ -11,10 +11,8 @@ module.exports = merge(common, {
   // we don't want contentHash in development, only production
   output: {
     path: path.resolve(__dirname, 'dist'),
-    // filename: 'js/bundle.js'
     filename: 'js/bundle.js',
     // publicPath: '/',
-    // assetModuleFilename: 'img/[name][ext]',
     assetModuleFilename: 'img/[name][ext]',
     clean: true,
   },

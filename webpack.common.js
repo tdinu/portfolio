@@ -11,11 +11,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  // entry: {main: "./src/index.js",   // main = [name]
-  //            vendor: "./src/vendor.js"},
-  // 'babel-polyfill'
-  // @babel/polyfill/noConflict
-  // entry: ['@babel/polyfill', './src/js/index.js'],
   entry: ['./src/js/index.js'],
 
   module: {
@@ -26,27 +21,9 @@ module.exports = {
       },
 
       {
-        // test: /\.(svg|png|jpe?g|gif)$/,
         test: /\.(jpe?g|png|gif|svg)$/i,
         // type: 'asset/resource',
-        // type: 'asset/inline',
         type: 'asset',
-        /* use: [
-          {
-            loader: 'file-loader',
-
-            options: {
-              name: 'img/[name].[ext]',
-
-              // outputPath: 'img',
-              // esModule: false,
-              // publicPath: '/img/',
-              // outputPath: '/img/',
-              // name: 'img/[name].[ext]', // [name].[hash].
-              // outputPath: "imgs"  //./
-            },
-          },
-        ], */
       },
     ],
   },
@@ -79,11 +56,3 @@ module.exports = {
     }),
   ],
 };
-//
-
-// package.json
-// "scripts": {
-//     "dev": "webpack --mode development",
-//     "build": "webpack --mode production",
-//     "start": "webpack-dev-server --mode development --open"
-//   },
