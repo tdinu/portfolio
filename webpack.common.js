@@ -21,7 +21,7 @@ module.exports = {
       },
 
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         // type: 'asset/resource',
         type: 'asset',
       },
@@ -34,6 +34,7 @@ module.exports = {
       title: 'My Portfolio',
       filename: 'index.html',
       template: './src/index.html',
+      favicon: './src/img/favicon.ico',
     }),
 
     // my portfolio
@@ -41,18 +42,21 @@ module.exports = {
       title: 'About Me',
       filename: 'about.html',
       template: './src/about.html',
+      favicon: './src/img/favicon.ico',
     }),
 
     new HtmlWebpackPlugin({
       title: 'My Work',
       filename: 'work.html',
       template: './src/work.html',
+      favicon: './src/img/favicon.ico',
     }),
 
     new HtmlWebpackPlugin({
       title: 'Contact Me',
       filename: 'contact.html',
       template: './src/contact.html',
+      favicon: './src/img/favicon.ico',
     }),
   ],
 };
