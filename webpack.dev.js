@@ -32,7 +32,17 @@ module.exports = merge(common, {
 
       {
         test: /\.s?[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require.resolve('sass'),
+            },
+          },
+        ],
       },
     ],
   },
